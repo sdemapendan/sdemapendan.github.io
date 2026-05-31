@@ -1,22 +1,283 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Web Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharyl Joy Demapendan | Web Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+      color: #f8fafc;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      gap: 40px;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .hero-text h1 span {
+      color: #38bdf8;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .bio {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
+    }
+
+    .btn-secondary {
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 28px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .profile-card img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 24px;
+      border: 4px solid #38bdf8;
+      margin-bottom: 20px;
+    }
+
+    .profile-card h2 {
+      color: #f8fafc;
+      margin-bottom: 8px;
+    }
+
+    .profile-card p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #38bdf8;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 25px;
+      border-radius: 20px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.13);
+    }
+
+    .card h3 {
+      color: #f8fafc;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    @media (max-width: 850px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 50px 0;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Sharyl Joy Demapendan</h1>
+  <div class="container">
+    <header>
+      <div class="logo">SJ Demapendan</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="resume.pdf" download>Resume</a>
+      </nav>
+    </header>
 
-    <img src="Profile Picture.jpg" alt="Professional photo" width="250">
+    <main>
+      <section class="hero" id="about">
+        <div class="hero-text">
+          <h1>Hello, I am <span>Sharyl Joy Demapendan</span></h1>
+          <p class="tagline">Graduate Student | Data Analytics | Computer Science</p>
 
-    <h2>About Me</h2>
-    <p>
-        Hello, my name is Sharyl Joy Demapendan. I am a graduate student studying data analytics and computer science.
-        This web portfolio highlights my background, resume, and academic work.
-    </p>
+          <div class="bio">
+            <p>
+              I am a graduate student studying data analytics and computer science. This web portfolio highlights my academic background, resume, and growing experience in programming, data analytics, and technology.
+            </p>
+          </div>
 
-    <h2>Resume</h2>
-    <p>
-        <a href="Resume.pdf" download>Download my Resume PDF</a>
-    </p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="resume.pdf" download>Download Resume PDF</a>
+            <a class="btn btn-secondary" href="#skills">View Skills</a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <img src="photo.jpg" alt="Professional photo of Sharyl Joy Demapendan" />
+          <h2>Sharyl Joy Demapendan</h2>
+          <p>Building skills in Python, data analytics, and web portfolio design.</p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2 class="section-title">Portfolio Highlights</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Data Analytics</h3>
+            <p>Learning how to analyze data, understand patterns, and use programming tools to support decision-making.</p>
+          </div>
+
+          <div class="card">
+            <h3>Python Fundamentals</h3>
+            <p>Practicing Python basics including variables, lists, loops, functions, and data science-related libraries.</p>
+          </div>
+
+          <div class="card">
+            <h3>Web Portfolio</h3>
+            <p>Creating a professional online presence using GitHub Pages, HTML, CSS, and a downloadable resume.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Sharyl Joy Demapendan. All Rights Reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>
