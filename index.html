@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sharyl Joy Demapendan | Web Portfolio</title>
+  <title>Sharyl Joy Demapendan | IT Support Portfolio</title>
   <style>
     * {
       margin: 0;
@@ -11,9 +11,13 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+      background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
       color: #f8fafc;
       min-height: 100vh;
       line-height: 1.6;
@@ -21,21 +25,21 @@
 
     .container {
       width: 90%;
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 40px 0;
+      padding: 32px 0;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+      padding: 18px 0;
     }
 
     .logo {
       font-size: 1.4rem;
-      font-weight: bold;
+      font-weight: 800;
       letter-spacing: 1px;
       color: #38bdf8;
     }
@@ -44,7 +48,7 @@
       color: #e2e8f0;
       text-decoration: none;
       margin-left: 20px;
-      font-weight: bold;
+      font-weight: 700;
       transition: color 0.3s ease;
     }
 
@@ -54,16 +58,25 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr 330px;
-      gap: 40px;
+      grid-template-columns: 1.2fr 340px;
+      gap: 42px;
       align-items: center;
-      padding: 80px 0;
+      padding: 70px 0 55px;
+    }
+
+    .eyebrow {
+      color: #38bdf8;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
     }
 
     .hero-text h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       line-height: 1.1;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
     .hero-text h1 span {
@@ -71,17 +84,19 @@
     }
 
     .tagline {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: #cbd5e1;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
+      max-width: 720px;
     }
 
     .bio {
       background: rgba(255, 255, 255, 0.08);
-      padding: 20px;
-      border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      margin-bottom: 30px;
+      padding: 22px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      margin-bottom: 28px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
     }
 
     .buttons {
@@ -95,14 +110,14 @@
       padding: 12px 22px;
       border-radius: 999px;
       text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-weight: 800;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
 
     .btn-primary {
       background: #38bdf8;
       color: #020617;
-      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
     }
 
     .btn-secondary {
@@ -117,10 +132,10 @@
     .profile-card {
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 28px;
-      padding: 25px;
+      border-radius: 30px;
+      padding: 26px;
       text-align: center;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
       backdrop-filter: blur(10px);
     }
 
@@ -139,11 +154,24 @@
 
     .profile-card p {
       color: #cbd5e1;
+      font-size: 0.96rem;
+    }
+
+    .contact-box {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      color: #cbd5e1;
       font-size: 0.95rem;
     }
 
+    .contact-box a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
     section {
-      margin-bottom: 50px;
+      margin-bottom: 52px;
     }
 
     .section-title {
@@ -162,7 +190,7 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.12);
       padding: 25px;
-      border-radius: 20px;
+      border-radius: 22px;
       transition: transform 0.3s ease, background 0.3s ease;
     }
 
@@ -176,9 +204,36 @@
       margin-bottom: 10px;
     }
 
-    .card p {
+    .card p,
+    .card li {
       color: #cbd5e1;
       font-size: 0.95rem;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .wide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #e0f2fe;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
     }
 
     footer {
@@ -188,7 +243,7 @@
       border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       header {
         flex-direction: column;
         gap: 15px;
@@ -201,19 +256,25 @@
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 50px 0;
+        padding: 45px 0;
+      }
+
+      .tagline {
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .buttons {
         justify-content: center;
       }
 
-      .cards {
+      .cards,
+      .wide-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-text h1 {
-        font-size: 2.3rem;
+        font-size: 2.35rem;
       }
     }
   </style>
@@ -225,6 +286,7 @@
       <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="resume.pdf" download>Resume</a>
       </nav>
     </header>
@@ -232,44 +294,112 @@
     <main>
       <section class="hero" id="about">
         <div class="hero-text">
+          <p class="eyebrow">IT Support • Security • Data Analytics</p>
           <h1>Hello, I am <span>Sharyl Joy Demapendan</span></h1>
-          <p class="tagline">Graduate Student | Data Analytics | Computer Science</p>
+          <p class="tagline">Graduate student at Old Dominion University and IT Support Specialist with experience in troubleshooting, Windows administration, security fundamentals, and technical support.</p>
 
           <div class="bio">
             <p>
-              I am a graduate student studying data analytics and computer science. This web portfolio highlights my academic background, resume, and growing experience in programming, data analytics, and technology.
+              I am a graduate student at Old Dominion University pursuing a Master's degree in Computer Science, and I also have a Bachelor's degree in Information Technology. My background includes technical support, cybersecurity project coordination, military leadership, asset management, and hands-on troubleshooting. I am focused on growing my skills in IT infrastructure, data analytics, Python, and security.
             </p>
           </div>
 
           <div class="buttons">
             <a class="btn btn-primary" href="resume.pdf" download>Download Resume PDF</a>
-            <a class="btn btn-secondary" href="#skills">View Skills</a>
+            <a class="btn btn-secondary" href="#experience">View Experience</a>
           </div>
         </div>
 
         <div class="profile-card">
           <img src="photo.jpg" alt="Professional photo of Sharyl Joy Demapendan" />
           <h2>Sharyl Joy Demapendan</h2>
-          <p>Building skills in Python, data analytics, and web portfolio design.</p>
+          <p>ODU Graduate Student | IT Support Specialist | Security+ Certified</p>
+          <div class="contact-box">
+            <p>Suffolk, Virginia</p>
+            <p><a href="mailto:sharyldemapendan@gmail.com">sharyldemapendan@gmail.com</a></p>
+            <p><a href="https://www.linkedin.com/in/sharyldemapendan" target="_blank">LinkedIn Profile</a></p>
+          </div>
         </div>
       </section>
 
       <section id="skills">
-        <h2 class="section-title">Portfolio Highlights</h2>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="pill-list">
+          <span class="pill">Technical Support</span>
+          <span class="pill">Troubleshooting</span>
+          <span class="pill">Windows OS Administration</span>
+          <span class="pill">Networking Basics</span>
+          <span class="pill">PowerShell</span>
+          <span class="pill">Security Fundamentals</span>
+          <span class="pill">VMware Exposure</span>
+          <span class="pill">Enterprise Hardware</span>
+          <span class="pill">Microsoft 365 Support</span>
+          <span class="pill">Problem Solving</span>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2 class="section-title">Experience Highlights</h2>
         <div class="cards">
           <div class="card">
-            <h3>Data Analytics</h3>
-            <p>Learning how to analyze data, understand patterns, and use programming tools to support decision-making.</p>
+            <h3>NEXCOM HQ</h3>
+            <p><strong>IT Support Technician</strong></p>
+            <p>Provide technical support for hardware, software, account setup, password resets, Windows issues, Microsoft 365, and basic network troubleshooting.</p>
           </div>
 
+          <div class="card">
+            <h3>DefendEdge LLC</h3>
+            <p><strong>IT Project Manager</strong></p>
+            <p>Managed cybersecurity projects, coordinated cross-functional teams, maintained project documentation, and supported client communication.</p>
+          </div>
+
+          <div class="card">
+            <h3>U.S. Navy</h3>
+            <p><strong>Shift Supervisor & Asset Manager</strong></p>
+            <p>Supervised operations, coordinated staff shifts, tracked assets, maintained records, and supported operational decision-making using reporting tools.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Education & Certifications</h2>
+        <div class="wide-grid">
+          <div class="card">
+            <h3>Education</h3>
+            <ul>
+              <li>Master of Science in Computer Science, Old Dominion University, in progress</li>
+              <li>Bachelor of Science in Information Technology, Systems Plus College Foundation</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Certifications</h3>
+            <ul>
+              <li>CompTIA Security+ ce</li>
+              <li>Microsoft Certified Solutions Associate 70-698</li>
+              <li>Fortinet Network Security Expert NSE</li>
+              <li>Microsoft Office Specialist: Excel 2010</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Portfolio Focus</h2>
+        <div class="cards">
           <div class="card">
             <h3>Python Fundamentals</h3>
-            <p>Practicing Python basics including variables, lists, loops, functions, and data science-related libraries.</p>
+            <p>Practicing Python basics such as variables, lists, loops, functions, and modules for data analytics coursework.</p>
           </div>
 
           <div class="card">
-            <h3>Web Portfolio</h3>
-            <p>Creating a professional online presence using GitHub Pages, HTML, CSS, and a downloadable resume.</p>
+            <h3>Data Analytics</h3>
+            <p>Developing skills in analyzing data, organizing information, and using programming tools to support better decisions.</p>
+          </div>
+
+          <div class="card">
+            <h3>IT & Security Growth</h3>
+            <p>Continuing to build hands-on experience in IT support, infrastructure, security, scripting, and technical problem solving.</p>
           </div>
         </div>
       </section>
